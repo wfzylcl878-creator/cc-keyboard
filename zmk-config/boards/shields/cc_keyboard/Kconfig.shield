@@ -1,0 +1,4 @@
+# SPDX-License-Identifier: MIT
+
+config SHIELD_CC_KEYBOARD
+	def_bool $(shields_list_contains,cc_keyboard)
