@@ -1,0 +1,160 @@
+# CC-Keyboard — 6 键蓝牙小键盘（4 方向 + 回车 + ESC）
+# 布局：两行紧凑十字（↓ 与 ←→ 同行），ESC 在 ↑ 左侧，
+#       回车 1u 宽 × 2u 高（竖跨两行）
+# 主控：SuperMini nRF52840（排针插接，可拆卸）
+# 生成：npx ergogen ergogen/config.yaml -o output
+
+meta:
+  author: cc-keyboard
+  version: v1.0.0
+
+units:
+  u: 19.05     # Cherry MX 标准键距
+  mm: 1
+  edge: 7.5    # PCB 边框外扩（mm）
+
+points:
+  zones:
+    matrix:
+      anchor:
+        rotate: 0
+      # 稀疏列结构（十字布局）：
+      #   x=-1: ESC(上) ←(下)   x=0: ↑(上) ↓(下)
+      #   x=+1: →(下)           x=+2: 回车（中心在两行之间）
+      columns:
+        esc:
+          rows:
+            top: {}
+            bottom: {}
+        nav:
+          rows:
+            top: {}
+            bottom: {}
+        right:
+          rows:
+            bottom: {}
+        enter:
+          rows:
+            # 上移半行 → 中心落在两行之间（1u 宽 × 2u 高竖键）
+            bottom: {shift: [0, 0.5u]}
+      rows:
+        top: {}
+        bottom: {}
+
+outlines:
+  # 定位板（plate）：轴孔 14mm
+  plate:
+    - what: rectangle
+      where: true
+      size: [14, 14]
+  # PCB 边框：键阵外扩 edge 毫米
+  board:
+    - what: rectangle
+      where: true
+      size: 1u
+      bound: true
+      expand: edge
+
+pcbs:
+  main:
+    outlines:
+      board: {outline: board}
+    footprints:
+      # —— 6 个 MX 热插拔轴位（挂到对应键位上）——
+      mx_esc:
+        what: mx
+        where: "/^matrix_esc_top$/"
+        params: {from: GND, to: KEY_ESC, hotswap: true}
+      mx_left:
+        what: mx
+        where: "/^matrix_esc_bottom$/"
+        params: {from: GND, to: KEY_LEFT, hotswap: true}
+      mx_up:
+        what: mx
+        where: "/^matrix_nav_top$/"
+        params: {from: GND, to: KEY_UP, hotswap: true}
+      mx_down:
+        what: mx
+        where: "/^matrix_nav_bottom$/"
+        params: {from: GND, to: KEY_DOWN, hotswap: true}
+      mx_right:
+        what: mx
+        where: "/^matrix_right_bottom$/"
+        params: {from: GND, to: KEY_RIGHT, hotswap: true}
+      mx_enter:
+        what: mx
+        where: "/^matrix_enter_bottom$/"
+        params: {from: GND, to: KEY_ENTER, hotswap: true}
+      # —— SuperMini 连接：9 位排针（6 信号 + GND + BAT+/BAT-）——
+      # SuperMini 焊排针、PCB 焊排母 → 可拆卸。2.54mm 间距横排。
+      pin1_esc:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [-10.16mm, -14mm], rotate: 0}
+        params: {net: KEY_ESC, width: 1.8, height: 1.8, text: "1 ESC  P0.06"}
+      pin2_up:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [-7.62mm, -14mm]}
+        params: {net: KEY_UP, width: 1.8, height: 1.8, text: "2 UP  P0.08"}
+      pin3_left:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [-5.08mm, -14mm]}
+        params: {net: KEY_LEFT, width: 1.8, height: 1.8, text: "3 LFT  P0.17"}
+      pin4_down:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [-2.54mm, -14mm]}
+        params: {net: KEY_DOWN, width: 1.8, height: 1.8, text: "4 DWN P0.20"}
+      pin5_right:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [0mm, -14mm]}
+        params: {net: KEY_RIGHT, width: 1.8, height: 1.8, text: "5 RGT  P0.22"}
+      pin6_enter:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [2.54mm, -14mm]}
+        params: {net: KEY_ENTER, width: 1.8, height: 1.8, text: "6 ENT  P0.24"}
+      pin7_gnd:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [5.08mm, -14mm]}
+        params: {net: GND, width: 1.8, height: 1.8, text: "7 GND"}
+      pin8_bat_p:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [7.62mm, -14mm]}
+        params: {net: BAT_PLUS, width: 1.8, height: 1.8, text: "8 B+"}
+      pin9_bat_n:
+        what: pad
+        where: "/^matrix_nav_bottom$/"
+        adjust: {shift: [10.16mm, -14mm]}
+        params: {net: BAT_MINUS, width: 1.8, height: 1.8, text: "9 B-"}
+
+      # —— 电池：JST PH 2.0 插座（配带插头电池，免焊接）——
+      battery:
+        what: jstph
+        where: "/^matrix_esc_top$/"
+        adjust: {shift: [2mm, 12mm], rotate: 180}
+        params: {pos: BAT_PLUS, neg: BAT_MINUS}
+
+      # —— 电源拨动开关（BAT+ 串入；不装开关时用锡桥短接）——
+      sw_common:
+        what: pad
+        where: "/^matrix_esc_top$/"
+        adjust: {shift: [-10mm, -4mm]}
+        params: {net: BAT_PLUS, width: 2.2, height: 2.2, text: "SW IN"}
+      sw_throw:
+        what: pad
+        where: "/^matrix_esc_top$/"
+        adjust: {shift: [-10mm, 2mm]}
+        params: {net: BAT_SWITCHED, width: 2.2, height: 2.2, text: "SW OUT"}
+
+      # —— 丝印 ——
+      title:
+        what: pad
+        where: "/^matrix_nav_top$/"
+        adjust: {shift: [12mm, 6mm]}
+        params: {net: "", width: 0.01, height: 0.01, text: "CC-Keyboard v1"}

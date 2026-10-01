@@ -1,0 +1,34 @@
+/*
+ * CC-Keyboard 键位映射
+ *
+ * bindings 顺序 = overlay 中 input-gpios 的顺序（ESC ↑ ← ↓ → ⏎）。
+ * 想加层（比如长按 ESC 切到媒体层）参考：
+ * https://zmk.dev/docs/keymaps/behaviors/layers
+ */
+
+#include <dt-bindings/zmk/keys.h>
+#include <behaviors.dtsi>
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            display-name = "Main";
+            bindings = <
+                &kp ESC     &kp UP
+                &kp LEFT    &kp DOWN    &kp RIGHT   &kp ENTER
+            >;
+        };
+
+        /* 示例：第二层（把下方层加进 bindings 后可用 &mo 1 切换）
+        media_layer {
+            display-name = "Media";
+            bindings = <
+                &trans      &kp C_VOL_UP
+                &kp C_PREV  &kp C_VOL_DN  &kp C_NEXT  &kp C_PLAY_PAUSE
+            >;
+        };
+        */
+    };
+};

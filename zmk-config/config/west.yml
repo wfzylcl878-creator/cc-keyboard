@@ -1,0 +1,12 @@
+# west manifest（ZMK 官方 workflow 在 config_path 下找 west.yml）
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+  self:
+    path: zmk-config/config

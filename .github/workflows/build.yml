@@ -1,0 +1,13 @@
+name: Build CC-Keyboard firmware
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
+    with:
+      # monorepo：矩阵与固件配置在 zmk-config/ 子目录
+      build_matrix_path: zmk-config/build.yaml
+      config_path: zmk-config/config
+      archive_name: cc-keyboard-firmware

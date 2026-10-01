@@ -1,0 +1,10 @@
+.DS_Store
+node_modules/
+
+# west 本地构建产物
+.west/
+build/
+zephyr/
+modules/
+bootloader/
+tools/
