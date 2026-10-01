@@ -1,6 +1,7 @@
 # ZMK 编译矩阵（GitHub Actions 读取）
 # SuperMini nRF52840 使用 nice!nano 板级定义（引脚兼容，社区通用做法）
-# nice_nano@2.0.0 即原 nice_nano_v2（ZMK 新版按 revision 组织板卡）
+# Zephyr 4.1 新板名：board/SoC/variant；zmk variant 才启用 BLE/USB（CONFIG_ZMK_BLE）
+# 默认 revision 2.0.0 即原 nice_nano_v2
 include:
-  - board: nice_nano@2.0.0
+  - board: nice_nano/nrf52840/zmk
     shield: cc_keyboard
