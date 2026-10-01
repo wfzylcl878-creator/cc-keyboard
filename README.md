@@ -25,10 +25,10 @@ cc-keyboard/
 │   └── outlines/board.dxf   #   外壳参考轮廓
 ├── zmk-config/              # ZMK 固件配置（push 到 GitHub 自动编译）
 │   ├── build.yaml           #   编译矩阵（板卡 + shield）
-│   ├── west.yml                     # west manifest（CI 用，须在此层级）
-│   └── config/
-│       ├── cc_keyboard.overlay       # 6 键直连扫描 + 引脚
-│       ├── cc_keyboard.keymap        # 键位（可加层）
+│   ├── west.yml             #   west manifest（CI 用，须在此层级）
+│   ├── cc_keyboard.keymap   #   键位（可加层）
+│   └── boards/shields/cc_keyboard/   # shield（zephyr 标准目录）
+│       ├── cc_keyboard.overlay       #   6 键直连扫描 + 引脚
 │       └── cc_keyboard.conf
 └── .github/workflows/build.yml  # 固件 CI（Actions 自动编译）
 ```
@@ -77,7 +77,7 @@ npx ergogen ergogen/config.yaml -o output
 3. SuperMini 双击 RST → 弹出 USB 磁盘 → 拖入 uf2 → 完成
 4. 系统蓝牙配对 "CC-Keyboard" 即可使用
 
-改键位：编辑 `config/cc_keyboard.keymap`（bindings 顺序对应排针 1-6），push 后重新下载 uf2。
+改键位：编辑 `zmk-config/cc_keyboard.keymap`（bindings 顺序对应排针 1-6），push 后重新下载 uf2。
 
 ## 焊接顺序
 
