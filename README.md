@@ -25,8 +25,8 @@ cc-keyboard/
 │   └── outlines/board.dxf   #   外壳参考轮廓
 ├── zmk-config/              # ZMK 固件配置（push 到 GitHub 自动编译）
 │   ├── build.yaml           #   编译矩阵（板卡 + shield）
+│   ├── west.yml                     # west manifest（CI 用，须在此层级）
 │   └── config/
-│       ├── west.yml                  # west manifest
 │       ├── cc_keyboard.overlay       # 6 键直连扫描 + 引脚
 │       ├── cc_keyboard.keymap        # 键位（可加层）
 │       └── cc_keyboard.conf

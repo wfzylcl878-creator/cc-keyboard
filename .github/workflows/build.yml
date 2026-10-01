@@ -7,7 +7,8 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 
     with:
-      # monorepo：矩阵与固件配置在 zmk-config/ 子目录
+      # monorepo：固件配置在 zmk-config/ 子目录
+      # 注意 config_path 须为仓库根下的一级目录（west workspace 顶目录要求）
       build_matrix_path: zmk-config/build.yaml
-      config_path: zmk-config/config
+      config_path: zmk-config
       archive_name: cc-keyboard-firmware

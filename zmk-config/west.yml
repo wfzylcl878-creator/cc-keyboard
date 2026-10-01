@@ -1,4 +1,5 @@
-# west manifest（ZMK 官方 workflow 在 config_path 下找 west.yml）
+# west manifest（ZMK 官方 workflow 要求：config_path 本身含 west.yml，
+# 且为仓库根下的一级目录，workspace 顶目录才会落在仓库根）
 manifest:
   remotes:
     - name: zmkfirmware
@@ -9,4 +10,4 @@ manifest:
       revision: main
       import: app/west.yml
   self:
-    path: zmk-config/config
+    path: zmk-config
