@@ -100,55 +100,51 @@ pcbs:
         where: "/^matrix_enter_bottom$/"
         params: {from: GND, to: KEY_ENTER, hotswap: true}
       # —— SuperMini nRF52840 排母座（横放在底部凸出区，USB 朝左）——
-      # 孔位按 SuperMini/nice!nano_v2 pinout（kriscables 图 + nice!nano v2 图交叉验证）：
-      #   行A(上排, USB端起): B- P0.06 P0.08 GND GND P0.17 P0.20 P0.22 P0.24 ...
-      #   行B(下排, USB端起第1孔): B+
+      # 孔位按实物丝印（12+12、排距 15.24、孔距 2.54）：
+      #   行A(上排, USB端起): P0.06 P0.08 GND GND P0.17 P0.20 P0.22 P0.24 P1.00 ...
+      #   行B(下排, USB端起): B+ GND 3V3 ...
+      # 该板无独立 B-（B- 即 GND），电池负极直接进 GND 网络。
       # 行B只放 1 孔 → 插反 180° 对不上，天然防呆。
       # pad 生成后经后处理脚本转为 1.0mm 通孔（排母用）。
-      mcu_bneg:
-        what: pad
-        where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [-5.74mm, -16.38mm]}
-        params: {net: BAT_MINUS, width: 1.8, height: 1.8, text: "B-"}
       mcu_esc:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [-3.20mm, -16.38mm]}
+        adjust: {shift: [-4.445mm, -16.38mm]}
         params: {net: KEY_ESC, width: 1.8, height: 1.8, text: "1"}
       mcu_up:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [-0.66mm, -16.38mm]}
+        adjust: {shift: [-1.905mm, -16.38mm]}
         params: {net: KEY_UP, width: 1.8, height: 1.8, text: "2"}
       mcu_gnd:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [1.88mm, -16.38mm]}
+        adjust: {shift: [0.635mm, -16.38mm]}
         params: {net: GND, width: 1.8, height: 1.8, text: "G"}
       mcu_left:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [6.96mm, -16.38mm]}
+        adjust: {shift: [5.715mm, -16.38mm]}
         params: {net: KEY_LEFT, width: 1.8, height: 1.8, text: "3"}
       mcu_down:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [9.525mm, -16.38mm]}
+        adjust: {shift: [8.255mm, -16.38mm]}
         params: {net: KEY_DOWN, width: 1.8, height: 1.8, text: "4"}
       mcu_right:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [12.065mm, -16.38mm]}
+        adjust: {shift: [10.795mm, -16.38mm]}
         params: {net: KEY_RIGHT, width: 1.8, height: 1.8, text: "5"}
       mcu_enter:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [14.605mm, -16.38mm]}
+        adjust: {shift: [13.335mm, -16.38mm]}
         params: {net: KEY_ENTER, width: 1.8, height: 1.8, text: "6"}
       mcu_bpos:
         what: pad
         where: "/^matrix_nav_bottom$/"
-        adjust: {shift: [-5.74mm, -31.62mm]}
+        adjust: {shift: [-4.445mm, -31.62mm]}
         # 开关出线（BAT_SWITCHED）：电池+ → 开关 → 此孔 → SuperMini B+
         params: {net: BAT_SWITCHED, width: 1.8, height: 1.8, text: "B+"}
       # SuperMini 板身丝印角标（33×17.78mm 区域四角）
@@ -163,12 +159,12 @@ pcbs:
         adjust: {shift: [26.025mm, -32.89mm]}
         params: {net: "", width: 0.8, height: 0.8, text: ""}
 
-      # —— 电池：JST PH 2.0 插座（凸出区左段）——
+      # —— 电池：JST PH 2.0 插座（凸出区左段）；负极直接进 GND（该板无独立 B-）——
       battery:
         what: jstph
         where: "/^matrix_nav_bottom$/"
         adjust: {shift: [-25.05mm, -24mm], rotate: 180}
-        params: {pos: BAT_PLUS, neg: BAT_MINUS}
+        params: {pos: BAT_PLUS, neg: GND}
 
       # —— 电源拨动开关焊盘（凸出区右段；不装开关时锡桥短接）——
       sw_common:
