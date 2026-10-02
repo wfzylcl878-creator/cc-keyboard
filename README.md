@@ -39,8 +39,8 @@ cc-keyboard/
 ```bash
 cd cc-keyboard
 npx ergogen ergogen/config.yaml -o output --svg
-# makerjs 输出的 SVG 是线框风格，切片软件需要实心填充：
-sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/' output/outlines/*.svg
+# makerjs 输出的 SVG 是线框风格（无填充带描边），切片软件需要实心填充、无描边：
+sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/; s/ stroke="#000"//; s/ stroke-width="0.25mm"//; s/ stroke-linecap="round"//; s/stroke:#000;//; s/stroke-width:0.25mm;//' output/outlines/*.svg
 ```
 
 ## 制造 / BOM（约 ¥80）
