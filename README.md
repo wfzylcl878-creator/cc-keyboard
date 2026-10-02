@@ -10,9 +10,12 @@
 │ ← │ ↓ │ → │   │
 └───┴───┴───┤   │
             └───┘
+┌───────────┴────────────────────┐
+│ 电池   [SuperMini 横放 USB←]  开关 │  ← 底部凸出区
+└────────────────────────────────┘
 ```
 
-主控 SuperMini nRF52840（排针插接可拆卸），ZMK 固件，热插拔轴座。
+主控 SuperMini nRF52840（排针插接可拆卸，躺平在底部凸出区、USB 朝左），ZMK 固件，热插拔轴座。
 
 ## 目录结构
 
@@ -39,8 +42,7 @@ cc-keyboard/
 ```bash
 cd cc-keyboard
 npx ergogen ergogen/config.yaml -o output --svg
-# makerjs 输出的 SVG 是线框风格（无填充带描边），切片软件需要实心填充、无描边：
-sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/; s/ stroke="#000"//; s/ stroke-width="0.25mm"//; s/ stroke-linecap="round"//; s/stroke:#000;//; s/stroke-width:0.25mm;//' output/outlines/*.svg
+python3 tools/postprocess.py   # PCB 数字规整+排母孔转通孔、SVG 填充清理
 ```
 
 ## 制造 / BOM（约 ¥80）
@@ -50,7 +52,7 @@ sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/; s/ stroke="#000"/
 | PCB | `output/pcbs/main_clean.kicad_pcb` 导入嘉立创 EDA 布线后下单（见下） | 1 |
 | 定位板 | `output/outlines/plate.dxf`，1.5mm | 1 |
 | SuperMini nRF52840 | 带 UF2 bootloader | 1 |
-| 排针/排母 | 2.54mm，1×9 | 各 1 |
+| 排针/排母 | 2.54mm（SuperMini 焊排针，PCB 焊排母，8+1 孔） | 各 1 |
 | MX 热插拔座 | 已在 PCB footprint 内 | 6（随 PCB） |
 | 轴体 | 任意 MX | 6 |
 | 键帽 | 1u×5 + 竖 2u 回车键帽 | 6 |
@@ -68,21 +70,24 @@ sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/; s/ stroke="#000"/
    - 懒人直接用 EDA 的自动布线，完成后肉眼检查
 3. 设计规则检查（DRC）通过后一键下单
 
-## 接线表（PCB 排针 → SuperMini）
+## 接线表（PCB 排母孔 → SuperMini）
 
-| 针 | 网络 | SuperMini 引脚 |
+排母双排（孔距 2.54mm、排距 15.24mm，与 SuperMini/nice!nano_v2 引脚一致），SuperMini 横放 USB 朝左、元件面朝上插入：
+
+| 孔 | 网络 | SuperMini 引脚（行/USB 端序号） |
 |---|---|---|
-| 1 | ESC | P0.06 |
-| 2 | ↑ | P0.08 |
-| 3 | ← | P0.17 |
-| 4 | ↓ | P0.20 |
-| 5 | → | P0.22 |
-| 6 | ⏎ | P0.24 |
-| 7 | GND | GND |
-| 8 | B+ | B+（电池正，经开关） |
-| 9 | B- | B-（电池负） |
+| 行A·1 | B- | B-（左排第 1 脚） |
+| 行A·2 | ESC | P0.06 |
+| 行A·3 | ↑ | P0.08 |
+| 行A·4 | GND | GND |
+| 行A·6 | ← | P0.17 |
+| 行A·7 | ↓ | P0.20 |
+| 行A·8 | → | P0.22 |
+| 行A·9 | ⏎ | P0.24 |
+| 行B·1 | B+ | B+（右排第 1 脚，经开关） |
 
-电池接 PCB 的 JST PH 座（免焊）；BAT+ 串电源开关后进 SuperMini。
+行B 只有一个孔——插反 180° 时对不上孔，天然防呆。SuperMini 上只需在对应 9 个脚焊排针，其余脚悬空。
+电池接 PCB 凸出区左段的 JST PH 座（免焊）；BAT+ 串凸出区右段的电源开关后进 SuperMini。
 
 ## 固件（ZMK）
 
@@ -96,8 +101,9 @@ sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/; s/ stroke="#000"/
 ## 焊接顺序
 
 1. 热插拔轴座（贴片，先焊一个脚对位再焊其余）
-2. 排母 ×9、JST 座、开关焊盘
-3. PCB 上所有焊接完成后插 SuperMini 通电测试
+2. 排母（8+1 孔）、JST 座、开关焊盘
+3. SuperMini 焊 9 根排针（对应接线表的脚），插排母测试
+4. 验证：插 USB → CHG 灯亮；按键在 ZMK 下生效（直接连手机蓝牙试）
 4. 验证：插 USB → CHG 灯亮；按键在 ZMK 下生效（`zmk-kconfig test` 或直接连手机蓝牙试）
 
 ## 已知取舍

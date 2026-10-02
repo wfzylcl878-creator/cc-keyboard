@@ -100,8 +100,8 @@
 (net 5 "KEY_DOWN")
 (net 6 "KEY_RIGHT")
 (net 7 "KEY_ENTER")
-(net 8 "BAT_SWITCHED")
-(net 9 "BAT_MINUS")
+(net 8 "BAT_MINUS")
+(net 9 "BAT_SWITCHED")
 (net 10 "BAT_PLUS")
 
   (net_class Default "This is the default net class."
@@ -119,8 +119,8 @@
 (add_net "KEY_DOWN")
 (add_net "KEY_RIGHT")
 (add_net "KEY_ENTER")
-(add_net "BAT_SWITCHED")
 (add_net "BAT_MINUS")
+(add_net "BAT_SWITCHED")
 (add_net "BAT_PLUS")
   )
 
@@ -350,17 +350,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 8.89 14 0)
+            (at 13.31 16.38 0)
 
             
             (fp_text reference "PAD1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 2 "KEY_ESC"))
-(fp_text user 1 ESC  P0.06 (at -7.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 2 "KEY_ESC"))
-(fp_text user 1 ESC  P0.06 (at -7.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 8 "BAT_MINUS"))
+(fp_text user B- (at -2.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 8 "BAT_MINUS"))
+(fp_text user B- (at -2.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -369,17 +369,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 11.43 14 0)
+            (at 15.85 16.38 0)
 
             
             (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 4 "KEY_UP"))
-(fp_text user 2 UP  P0.08 (at -6.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 4 "KEY_UP"))
-(fp_text user 2 UP  P0.08 (at -6.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 2 "KEY_ESC"))
+(fp_text user 1 (at -1.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 2 "KEY_ESC"))
+(fp_text user 1 (at -1.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -388,17 +388,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 13.97 14 0)
+            (at 18.39 16.38 0)
 
             
             (fp_text reference "PAD3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 3 "KEY_LEFT"))
-(fp_text user 3 LFT  P0.17 (at -7.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 3 "KEY_LEFT"))
-(fp_text user 3 LFT  P0.17 (at -7.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 4 "KEY_UP"))
+(fp_text user 2 (at -1.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 4 "KEY_UP"))
+(fp_text user 2 (at -1.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -407,17 +407,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 16.51 14 0)
+            (at 20.93 16.38 0)
 
             
             (fp_text reference "PAD4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 5 "KEY_DOWN"))
-(fp_text user 4 DWN P0.2 (at -6.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 5 "KEY_DOWN"))
-(fp_text user 4 DWN P0.2 (at -6.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 1 "GND"))
+(fp_text user G (at -1.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 1 "GND"))
+(fp_text user G (at -1.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -426,17 +426,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 19.05 14 0)
+            (at 26.01 16.38 0)
 
             
             (fp_text reference "PAD5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 6 "KEY_RIGHT"))
-(fp_text user 5 RGT  P0.22 (at -7.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 6 "KEY_RIGHT"))
-(fp_text user 5 RGT  P0.22 (at -7.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 3 "KEY_LEFT"))
+(fp_text user 3 (at -1.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 3 "KEY_LEFT"))
+(fp_text user 3 (at -1.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -445,17 +445,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 21.59 14 0)
+            (at 28.575 16.38 0)
 
             
             (fp_text reference "PAD6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 7 "KEY_ENTER"))
-(fp_text user 6 ENT  P0.24 (at -7.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 7 "KEY_ENTER"))
-(fp_text user 6 ENT  P0.24 (at -7.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 5 "KEY_DOWN"))
+(fp_text user 4 (at -1.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 5 "KEY_DOWN"))
+(fp_text user 4 (at -1.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -464,17 +464,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 24.13 14 0)
+            (at 31.115 16.38 0)
 
             
             (fp_text reference "PAD7" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 1 "GND"))
-(fp_text user 7 GND (at -3.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 1 "GND"))
-(fp_text user 7 GND (at -3.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 6 "KEY_RIGHT"))
+(fp_text user 5 (at -1.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 6 "KEY_RIGHT"))
+(fp_text user 5 (at -1.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -483,17 +483,17 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 26.67 14 0)
+            (at 33.655 16.38 0)
 
             
             (fp_text reference "PAD8" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 8 "BAT_SWITCHED"))
-(fp_text user 8 B+ (at -3.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 8 "BAT_SWITCHED"))
-(fp_text user 8 B+ (at -3.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 7 "KEY_ENTER"))
+(fp_text user 6 (at -1.9 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 7 "KEY_ENTER"))
+(fp_text user 6 (at -1.9 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
@@ -502,17 +502,55 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 29.21 14 0)
+            (at 13.31 31.62 0)
 
             
             (fp_text reference "PAD9" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 9 "BAT_MINUS"))
-(fp_text user 9 B- (at -3.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 9 "BAT_MINUS"))
-(fp_text user 9 B- (at -3.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            (pad 1 thru_hole circle (at 0 0 0) (size 1.9 1.9) (drill 1.0) (layers *.Cu *.Mask) (net 9 "BAT_SWITCHED"))
+(fp_text user B+ (at -2.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 9 "BAT_SWITCHED"))
+(fp_text user B+ (at -2.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            
+        )
+    
+        
+
+    
+        (module SMDPad (layer F.Cu) (tedit 5B24D78E)
+
+            (at 12.075 15.11 0)
+
+            
+            (fp_text reference "PAD10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            
+            
+            (pad 1 smd rect (at 0 0 0) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+(fp_text user USB < (at -3.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 0.8 0.8) (layers B.Cu B.Paste B.Mask) (net 0 ""))
+(fp_text user USB < (at -3.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            
+        )
+    
+        
+
+    
+        (module SMDPad (layer F.Cu) (tedit 5B24D78E)
+
+            (at 45.075 32.89 0)
+
+            
+            (fp_text reference "PAD11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            
+            
+            (pad 1 smd rect (at 0 0 0) (size 0.8 0.8) (layers F.Cu F.Paste F.Mask) (net 0 ""))
+
+            (pad 1 smd rect (at 0 0 0) (size 0.8 0.8) (layers B.Cu B.Paste B.Mask) (net 0 ""))
+
             
         )
     
@@ -524,7 +562,7 @@
         (descr "JST PH series connector, S2B-PH-K, side entry type, through hole, Datasheet: http://www.jst-mfg.com/product/pdf/eng/ePH.pdf")
         (tags "connector jst ph")
 
-        (at 2 -31.05 180)
+        (at -6 24 180)
 
         
         (fp_text reference "JST1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -543,7 +581,7 @@
         (fp_line (start -1.25 1.75) (end -0.75 1.75) (layer F.SilkS) (width 0.15))
 
         (pad 1 thru_hole rect (at -1 0 180) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 10 "BAT_PLUS"))
-        (pad 2 thru_hole oval (at 1 0 180) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 9 "BAT_MINUS"))
+        (pad 2 thru_hole oval (at 1 0 180) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 8 "BAT_MINUS"))
             
     )
     
@@ -552,10 +590,10 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at -10 -15.05 0)
+            (at 48.5 24 0)
 
             
-            (fp_text reference "PAD10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -571,16 +609,16 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at -10 -21.05 0)
+            (at 51.5 24 0)
 
             
-            (fp_text reference "PAD11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD13" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers F.Cu F.Paste F.Mask) (net 8 "BAT_SWITCHED"))
+            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers F.Cu F.Paste F.Mask) (net 9 "BAT_SWITCHED"))
 (fp_text user SW OUT (at -4.6 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers B.Cu B.Paste B.Mask) (net 8 "BAT_SWITCHED"))
+            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers B.Cu B.Paste B.Mask) (net 9 "BAT_SWITCHED"))
 (fp_text user SW OUT (at -4.6 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
@@ -590,23 +628,22 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 31.05 -25.05 0)
+            (at 58 30 0)
 
             
-            (fp_text reference "PAD12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD14" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
             (pad 1 smd rect (at 0 0 0) (size 0.01 0.01) (layers F.Cu F.Paste F.Mask) (net 0 ""))
-(fp_text user CC-Keyboard v1 (at -7.505 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+(fp_text user CC-Keyboard v1.1 (at -8.505 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
             (pad 1 smd rect (at 0 0 0) (size 0.01 0.01) (layers B.Cu B.Paste B.Mask) (net 0 ""))
-(fp_text user CC-Keyboard v1 (at -7.505 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+(fp_text user CC-Keyboard v1.1 (at -8.505 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
     
         
-  (gr_line (start -9.525 17.025) (end 47.625 17.025) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 47.625 9.525) (end 47.625 17.025) (angle -90) (layer Edge.Cuts) (width 0.15))
+  (gr_arc (start 47.625 9.525) (end 53.100799 14.65) (angle -43.104674) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 55.125 9.525) (end 55.125 7.5) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start 55.125 7.5) (end 66.675 7.5) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start 66.675 0) (end 66.675 7.5) (angle -90) (layer Edge.Cuts) (width 0.15))
@@ -621,7 +658,12 @@
 (gr_line (start -9.525 -36.075) (end 28.575 -36.075) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start -9.525 -28.575) (end -9.525 -36.075) (angle -90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start -17.025 9.525) (end -17.025 -28.575) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start -9.525 9.525) (end -17.025 9.525) (angle -90.0) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start -9.525 9.525) (end -17.025 9.525) (angle -43.104674) (layer Edge.Cuts) (width 0.15))
+(gr_line (start -17.02 34.65) (end 74.17 34.65) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 74.17 34.65) (end 74.17 14.65) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 74.17 14.65) (end 53.100799 14.65) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start -15.000799 14.65) (end -17.02 14.65) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start -17.02 14.65) (end -17.02 34.65) (angle 90) (layer Edge.Cuts) (width 0.15))
 
 )
 
