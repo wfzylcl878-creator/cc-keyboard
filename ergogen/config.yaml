@@ -136,7 +136,8 @@ pcbs:
         what: pad
         where: "/^matrix_nav_bottom$/"
         adjust: {shift: [7.62mm, -14mm]}
-        params: {net: BAT_PLUS, width: 1.8, height: 1.8, text: "8 B+"}
+        # BAT_SWITCHED（开关出）而非 BAT_PLUS——电池正须经开关再到 SuperMini
+        params: {net: BAT_SWITCHED, width: 1.8, height: 1.8, text: "8 B+"}
       pin9_bat_n:
         what: pad
         where: "/^matrix_nav_bottom$/"

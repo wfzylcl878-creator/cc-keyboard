@@ -47,7 +47,7 @@ sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/; s/ stroke="#000"/
 
 | 部件 | 规格 | 数量 |
 |---|---|---|
-| PCB | 嘉立创上传 `output/pcbs/main.kicad_pcb` 打样 | 1 |
+| PCB | `output/pcbs/main_clean.kicad_pcb` 导入嘉立创 EDA 布线后下单（见下） | 1 |
 | 定位板 | `output/outlines/plate.dxf`，1.5mm | 1 |
 | SuperMini nRF52840 | 带 UF2 bootloader | 1 |
 | 排针/排母 | 2.54mm，1×9 | 各 1 |
@@ -56,6 +56,17 @@ sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/; s/ stroke="#000"/
 | 键帽 | 1u×5 + 竖 2u 回车键帽 | 6 |
 | 电池 | PH2.0 插头，401230 (150mAh) | 1 |
 | 电源开关 | MSK-12C02 拨动（或不装、锡桥短接） | 1 |
+
+## PCB 布线与下单
+
+**Ergogen 只做布局、不布线**——`main.kicad_pcb` 里没有任何铜走线（EDA 里看到的连线全是飞线），直接打样回来不能工作。流程：
+
+1. 嘉立创 EDA（pro.lceda.cn）→ 文件 → 导入 → KiCad PCB → 选 `output/pcbs/main_clean.kicad_pcb`（数字规整版，直传下单页可能解析失败）
+2. 布线（全部才 13 个连接，一把过）：
+   - 信号线宽 0.25mm，电源线（`BAT_*`）0.5mm
+   - GND 用整板敷铜（放置 → 整块敷铜 → 网络 GND），省 6 条线
+   - 懒人直接用 EDA 的自动布线，完成后肉眼检查
+3. 设计规则检查（DRC）通过后一键下单
 
 ## 接线表（PCB 排针 → SuperMini）
 
