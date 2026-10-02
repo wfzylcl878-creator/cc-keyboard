@@ -21,6 +21,7 @@ points:
       # 稀疏列结构（十字布局）：
       #   x=-1: ESC(上) ←(下)   x=0: ↑(上) ↓(下)
       #   x=+1: →(下)           x=+2: 回车（中心在两行之间）
+      # 注意：列内 rows 不能删行（zone 行全保留），须用 skip: true
       columns:
         esc:
           rows:
@@ -32,21 +33,30 @@ points:
             bottom: {}
         right:
           rows:
+            top: {skip: true}
             bottom: {}
         enter:
           rows:
+            top: {skip: true}
             # 上移半行 → 中心落在两行之间（1u 宽 × 2u 高竖键）
             bottom: {shift: [0, 0.5u]}
+      # 行按声明顺序自 y=0 向上堆叠——bottom 必须写在前
       rows:
-        top: {}
         bottom: {}
+        top: {}
 
 outlines:
-  # 定位板（plate）：轴孔 14mm
+  # 定位板（plate）：外形与 PCB 同（键阵外扩 edge），再挖 14mm 轴孔
   plate:
     - what: rectangle
       where: true
+      size: 1u
+      bound: true
+      expand: edge
+    - what: rectangle
+      where: true
       size: [14, 14]
+      operation: subtract
   # PCB 边框：键阵外扩 edge 毫米
   board:
     - what: rectangle

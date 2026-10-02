@@ -127,7 +127,7 @@
   
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 0 0 0)
+      (at 0 -19.05 0)
 
       
       (fp_text reference "S1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -164,7 +164,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 0 -19.05 0)
+      (at 0 0 0)
 
       
       (fp_text reference "S2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -201,7 +201,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 19.05 0 0)
+      (at 19.05 -19.05 0)
 
       
       (fp_text reference "S3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -238,7 +238,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 19.05 -19.05 0)
+      (at 19.05 0 0)
 
       
       (fp_text reference "S4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -275,7 +275,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 38.1 -19.05 0)
+      (at 38.1 0 0)
 
       
       (fp_text reference "S5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -312,7 +312,7 @@
 
         
       (module MX (layer F.Cu) (tedit 5DD4F656)
-      (at 57.15 -28.575000000000003 0)
+      (at 57.15 -9.525 0)
 
       
       (fp_text reference "S6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -350,7 +350,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 8.89 -5.050000000000001 0)
+            (at 8.89 14 0)
 
             
             (fp_text reference "PAD1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -369,7 +369,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 11.43 -5.050000000000001 0)
+            (at 11.43 14 0)
 
             
             (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -388,7 +388,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 13.97 -5.050000000000001 0)
+            (at 13.97 14 0)
 
             
             (fp_text reference "PAD3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -407,7 +407,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 16.51 -5.050000000000001 0)
+            (at 16.51 14 0)
 
             
             (fp_text reference "PAD4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -426,7 +426,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 19.05 -5.050000000000001 0)
+            (at 19.05 14 0)
 
             
             (fp_text reference "PAD5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -445,7 +445,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 21.59 -5.050000000000001 0)
+            (at 21.59 14 0)
 
             
             (fp_text reference "PAD6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -464,7 +464,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 24.130000000000003 -5.050000000000001 0)
+            (at 24.130000000000003 14 0)
 
             
             (fp_text reference "PAD7" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -483,7 +483,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 26.67 -5.050000000000001 0)
+            (at 26.67 14 0)
 
             
             (fp_text reference "PAD8" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -502,7 +502,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 29.21 -5.050000000000001 0)
+            (at 29.21 14 0)
 
             
             (fp_text reference "PAD9" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -524,7 +524,7 @@
         (descr "JST PH series connector, S2B-PH-K, side entry type, through hole, Datasheet: http://www.jst-mfg.com/product/pdf/eng/ePH.pdf")
         (tags "connector jst ph")
 
-        (at 2 -12 180)
+        (at 2 -31.05 180)
 
         
         (fp_text reference "JST1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -552,7 +552,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at -10 4 0)
+            (at -10 -15.05 0)
 
             
             (fp_text reference "PAD10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -571,7 +571,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at -10 -2 0)
+            (at -10 -21.05 0)
 
             
             (fp_text reference "PAD11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -590,7 +590,7 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 31.05 -6 0)
+            (at 31.05 -25.05 0)
 
             
             (fp_text reference "PAD12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
@@ -605,14 +605,20 @@
         )
     
         
-  (gr_line (start -9.525 17.025) (end 66.675 17.025) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 66.675 9.525) (end 66.675 17.025) (angle -90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 74.175 9.525) (end 74.175 -38.1) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 66.675 -38.1) (end 74.175 -38.1) (angle -90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 66.675 -45.60000000000001) (end 47.625 -45.60000000000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_arc (start 47.625 -38.10000000000001) (end 47.625 -45.60000000000001) (angle -90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start 40.125 -38.10000000000001) (end 40.125 -36.07500000000001) (angle 90) (layer Edge.Cuts) (width 0.15))
-(gr_line (start -9.524999999999999 -36.075) (end 40.125 -36.07500000000001) (angle 90) (layer Edge.Cuts) (width 0.15))
+  (gr_line (start -9.525 17.025) (end 47.625 17.025) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 47.625 9.525) (end 47.625 17.025) (angle -90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 55.125 9.525) (end 55.125 7.5) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 55.125 7.5) (end 66.675 7.5) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 66.675 0) (end 66.675 7.5) (angle -90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 74.175 0) (end 74.175 -19.05) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 66.675 -19.05) (end 74.175 -19.05) (angle -90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 66.675 -26.55) (end 47.625 -26.55) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 47.625 -19.05) (end 47.625 -26.55) (angle -34.16421262093289) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 38.575 -19.525) (end 43.413250000000005 -25.255736199999998) (angle -40.1731733430704) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 36.075 -27.025) (end 38.575 -27.025) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start 36.075 -27.025) (end 36.075 -28.575) (angle 90) (layer Edge.Cuts) (width 0.15))
+(gr_arc (start 28.575000000000003 -28.575) (end 36.075 -28.575) (angle -90) (layer Edge.Cuts) (width 0.15))
+(gr_line (start -9.524999999999999 -36.075) (end 28.575000000000003 -36.075) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start -9.524999999999999 -28.575000000000003) (end -9.524999999999999 -36.075) (angle -90) (layer Edge.Cuts) (width 0.15))
 (gr_line (start -17.025 9.524999999999999) (end -17.025 -28.575000000000003) (angle 90) (layer Edge.Cuts) (width 0.15))
 (gr_arc (start -9.525 9.525) (end -17.025 9.525) (angle -90.00000000000003) (layer Edge.Cuts) (width 0.15))

@@ -21,7 +21,8 @@ cc-keyboard/
 ├── ergogen/config.yaml      # PCB 生成配置（改布局/接线就改它）
 ├── output/                  # 生成产物（可随时重新生成）
 │   ├── pcbs/main.kicad_pcb  #   PCB（嘉立创打样直接上传）
-│   ├── outlines/plate.dxf   #   定位板（1.5mm 激光切割/打印）
+│   ├── outlines/plate.dxf   #   定位板（1.5mm 激光切割/CNC）
+│   ├── outlines/plate.svg   #   定位板 SVG（切片软件 3D 打印用，导入后厚度设 1.5mm）
 │   └── outlines/board.dxf   #   外壳参考轮廓
 ├── zmk-config/              # ZMK 固件配置（push 到 GitHub 自动编译）
 │   ├── build.yaml           #   编译矩阵（板卡 + shield）
@@ -37,7 +38,9 @@ cc-keyboard/
 
 ```bash
 cd cc-keyboard
-npx ergogen ergogen/config.yaml -o output
+npx ergogen ergogen/config.yaml -o output --svg
+# makerjs 输出的 SVG 是线框风格，切片软件需要实心填充：
+sed -i '' 's/fill="none"/fill="#000"/; s/fill:none/fill:#000/' output/outlines/*.svg
 ```
 
 ## 制造 / BOM（约 ¥80）
@@ -90,3 +93,4 @@ npx ergogen ergogen/config.yaml -o output
 
 - 回车是**热插拔轴**竖跨 2u，键帽需 1×2 竖键帽；无卫星轴孔（2u 竖键无卫星轴可接受，边缘按压略晃，介意可后续 rev2 加 stab 孔）
 - `where` 过滤器使用 `/regex/` 斜杠格式（Ergogen 的字符串 where 是全等匹配，不是正则）
+- Ergogen 稀疏布局：列内 `rows` 不能删行，须对要删的键写 `skip: true`；且行按**声明顺序**自 y=0 向上堆叠，全局 `rows` 必须把 `bottom` 写在 `top` 前，否则行名与实际位置颠倒
