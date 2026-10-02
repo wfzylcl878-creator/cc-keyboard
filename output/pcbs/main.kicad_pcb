@@ -100,8 +100,9 @@
 (net 5 "KEY_DOWN")
 (net 6 "KEY_RIGHT")
 (net 7 "KEY_ENTER")
-(net 8 "BAT_SWITCHED")
-(net 9 "BAT_PLUS")
+(net 8 "BAT_MINUS")
+(net 9 "BAT_SWITCHED")
+(net 10 "BAT_PLUS")
 
   (net_class Default "This is the default net class."
     (clearance 0.2)
@@ -118,6 +119,7 @@
 (add_net "KEY_DOWN")
 (add_net "KEY_RIGHT")
 (add_net "KEY_ENTER")
+(add_net "BAT_MINUS")
 (add_net "BAT_SWITCHED")
 (add_net "BAT_PLUS")
   )
@@ -348,10 +350,29 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 14.605 16.38 0)
+            (at 13.335 16.38 0)
 
             
             (fp_text reference "PAD1" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            
+            
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 8 "BAT_MINUS"))
+(fp_text user B- (at -2.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 8 "BAT_MINUS"))
+(fp_text user B- (at -2.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
+            
+        )
+    
+        
+
+    
+        (module SMDPad (layer F.Cu) (tedit 5B24D78E)
+
+            (at 15.875 16.38 0)
+
+            
+            (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -367,10 +388,10 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 17.145 16.38 0)
+            (at 18.415 16.38 0)
 
             
-            (fp_text reference "PAD2" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -386,10 +407,10 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 19.685000000000002 16.38 0)
+            (at 20.955000000000002 16.38 0)
 
             
-            (fp_text reference "PAD3" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -405,10 +426,10 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 24.765 16.38 0)
+            (at 26.035 16.38 0)
 
             
-            (fp_text reference "PAD4" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -424,10 +445,10 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 27.305 16.38 0)
+            (at 28.575000000000003 16.38 0)
 
             
-            (fp_text reference "PAD5" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -443,10 +464,10 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 29.845 16.38 0)
+            (at 31.115000000000002 16.38 0)
 
             
-            (fp_text reference "PAD6" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD7" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -462,10 +483,10 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 32.385000000000005 16.38 0)
+            (at 33.655 16.38 0)
 
             
-            (fp_text reference "PAD7" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD8" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -481,16 +502,16 @@
     
         (module SMDPad (layer F.Cu) (tedit 5B24D78E)
 
-            (at 14.605 31.62 0)
+            (at 13.335 31.62 0)
 
             
-            (fp_text reference "PAD8" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD9" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 8 "BAT_SWITCHED"))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers F.Cu F.Paste F.Mask) (net 9 "BAT_SWITCHED"))
 (fp_text user B+ (at -2.4 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 8 "BAT_SWITCHED"))
+            (pad 1 smd rect (at 0 0 0) (size 1.8 1.8) (layers B.Cu B.Paste B.Mask) (net 9 "BAT_SWITCHED"))
 (fp_text user B+ (at -2.4 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
@@ -503,7 +524,7 @@
             (at 12.075000000000001 15.11 0)
 
             
-            (fp_text reference "PAD9" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -522,7 +543,7 @@
             (at 45.075 32.89 0)
 
             
-            (fp_text reference "PAD10" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
@@ -559,8 +580,8 @@
         (fp_line (start -1 1.5) (end -1 2.0) (layer F.SilkS) (width 0.15))
         (fp_line (start -1.25 1.75) (end -0.75 1.75) (layer F.SilkS) (width 0.15))
 
-        (pad 1 thru_hole rect (at -1 0 180) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 9 "BAT_PLUS"))
-        (pad 2 thru_hole oval (at 1 0 180) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 1 "GND"))
+        (pad 1 thru_hole rect (at -1 0 180) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 10 "BAT_PLUS"))
+        (pad 2 thru_hole oval (at 1 0 180) (size 1.2 1.7) (drill 0.75) (layers *.Cu *.Mask) (net 8 "BAT_MINUS"))
             
     )
     
@@ -572,13 +593,13 @@
             (at 48.5 24 0)
 
             
-            (fp_text reference "PAD11" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers F.Cu F.Paste F.Mask) (net 9 "BAT_PLUS"))
+            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers F.Cu F.Paste F.Mask) (net 10 "BAT_PLUS"))
 (fp_text user SW IN (at -4.1 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers B.Cu B.Paste B.Mask) (net 9 "BAT_PLUS"))
+            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers B.Cu B.Paste B.Mask) (net 10 "BAT_PLUS"))
 (fp_text user SW IN (at -4.1 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
@@ -591,13 +612,13 @@
             (at 51.5 24 0)
 
             
-            (fp_text reference "PAD12" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD13" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
-            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers F.Cu F.Paste F.Mask) (net 8 "BAT_SWITCHED"))
+            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers F.Cu F.Paste F.Mask) (net 9 "BAT_SWITCHED"))
 (fp_text user SW OUT (at -4.6 0 0) (layer F.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) ))
-            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers B.Cu B.Paste B.Mask) (net 8 "BAT_SWITCHED"))
+            (pad 1 smd rect (at 0 0 0) (size 2.2 2.2) (layers B.Cu B.Paste B.Mask) (net 9 "BAT_SWITCHED"))
 (fp_text user SW OUT (at -4.6 0 0) (layer B.SilkS) (effects (font (size 0.8 0.8) (thickness 0.15)) (justify mirror)))
             
         )
@@ -610,7 +631,7 @@
             (at 58 30 0)
 
             
-            (fp_text reference "PAD13" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
+            (fp_text reference "PAD14" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             (fp_text value "" (at 0 0) (layer F.SilkS) hide (effects (font (size 1.27 1.27) (thickness 0.15))))
             
             
